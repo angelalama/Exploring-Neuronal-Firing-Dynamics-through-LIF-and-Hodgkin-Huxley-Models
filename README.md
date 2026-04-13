@@ -23,41 +23,41 @@ The Hodgkin-Huxley model is a biophysical model that describes neuronal dynamics
 ## Results
 
 ### Membrane Potential Dynamics (LIF)
-![LIF](figures/Fig2.png)
+- Fig2.png
 The LIF model exhibits abrupt spike generation once the membrane potential crosses a fixed threshold. This results in regular and sharp firing patterns. The figure generated doesn't model ion channels because the spike is “artificial.” This means that it only reaches the threshold and then resets. Therefore, in the graph, it never goes much beyond 0 mV (or even cuts off before that).
 
 ### Membrane Potential Dynamics (HH)
-![HH](figures/Fig1.png)
+- Fig1.png
 The Hodgkin-Huxley model produces smooth and biologically realistic action potentials driven by the interaction of ion channels. The figure models Na⁺ and K⁺ channels, and when activated, Na⁺ flows in massively. As a consequence, the result is that the voltage rises to +30 / +40 mV, and that is why the peaks are much higher than in the LIF model.
 
 ### Model Comparison
-![Comparison](figures/Fig3.png)
+- Fig3.png
 While both models generate spikes, the LIF model produces idealized threshold-based firing, whereas the HH model captures detailed spike shapes and dynamics. 
 There is a difference in the downward phase. On the one hand, in LIF, the voltage drops instantly due to the equation used (V = V_reset). This creates an artificial vertical drop. On the other hand, in HH, the voltage drops gradually because Na⁺ channels close and K⁺ channels open, resulting in a realistic repolarization.
 
 ### Spike Timing Comparison
-![Spikes](figures/Fig3.png)
+- Fig3.png
 In spike timing, we observe that spikes are more frequent in HH because it has active dynamics, whereas in LIF, spikes are slightly more spaced out because it is limited by the refractory period.
 
 ### F-I Curves (Firing Rate vs Input Current)
-![FI](figures/Fig4.png)
+- Fig4.png
 The LIF model exhibits an abrupt onset of firing due to its fixed threshold and linear dynamics, resulting in a sharp transition from silence to repetitive spiking. In contrast, the Hodgkin-Huxley model shows a gradual increase in firing rate, as spike generation emerges from the nonlinear interaction of voltage-gated ion channels, leading to a smooth and ly realistic response.
 
 ### Parameter Effects (LIF)
-![LIF Params](figures/Fig5.png)
+- Fig5.png
 * At a lower threshold: the curve shifts to the left because, as V_thresh decreases, less current is needed to reach the spike, making it easier to trigger. 
 * In Higher R: it also shifts to the left (but in a different way) because in V=RI, if R increases, the voltage rises more with the same current. Thus, the threshold is reached faster, and firing can occur with a lower I.
 The difference between these two is that in threshold, the firing condition changes, while in R, how the voltage builds up changes
 
 ### Parameter Effects (HH)
-![HH Params](figures/Fig6.png)
+- Fig6.png
 * At higher gNa: the curve shifts upward and to the left. This occurs because Na⁺ depolarizes (increases the voltage), and if gNa is increased, more Na⁺ enters and the spike is triggered more easily. As a result, the firing rate increases and the spike begins earlier.
 * In  Higher gK: the curve shifts to the right and down. This is because K+
 repolarizes (lowers the voltage), and if gK is increased, the neuron “turns off” faster and is harder to trigger. Therefore, more current is needed and the frequency is lower.
 * At Baseline: This is the natural balance between: Na⁺ (excites) and K⁺ (inhibits)
 
 ### All Parameter Effects (LIF and HH)
-![HH Params](figures/Fig7.png)
+- Fig7.png
 In the LIF model, parameter changes such as threshold and membrane resistance primarily shift the F-I curve by altering the effective input required to reach firing. In contrast, in the Hodgkin-Huxley model, changes in ion channel conductances (gNa, gK) modify the intrinsic excitability and nonlinear dynamics of the system, which leads to more complex transformations in both the slope and shape of the F-I relationship.
 
 ## Key Insights
